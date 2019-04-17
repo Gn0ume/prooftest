@@ -1,4 +1,5 @@
-import { Component, Input, OnInit } from "@angular/core";
+import { Component, Input, OnInit } from '@angular/core';
+import { RuleModel } from '../../types/Rule.model';
 
 @Component({
   selector: 'app-rules-list',
@@ -8,8 +9,25 @@ import { Component, Input, OnInit } from "@angular/core";
 
 export class RulesListComponent implements OnInit {
   @Input() listName = 'Rules List';
-  @Input() ruleTitle = 'Add Rule';
-  constructor() { }
+  @Input() ruleTitle: string;
+  rules: RuleModel[];
+
+  constructor() {
+    this.rules = [];
+  }
+
+  deleteFromList(rule) {
+    const index = this.rules.indexOf(rule);
+    this.rules.splice(index, 1);
+  }
+
+  addToList() {
+    this.rules.push({
+      type: 'contains',
+      url: ''
+    });
+    console.log(this.rules);
+  }
 
   ngOnInit() {
   }

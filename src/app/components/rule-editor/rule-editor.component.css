@@ -1,0 +1,62 @@
+
+.new-rule-overlay{
+  position: relative;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #e0e0e0;
+  border-radius: 7px;
+  left: 0;
+  top: 0;
+  z-index: 1000;
+  background: white;
+  margin-bottom: 10px;
+}
+
+.new-rule-overlay .close-button{
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 10px;
+  height: 10px;
+  border: 2px solid grey;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.new-rule-overlay .title{
+  color: #bebebe;
+  font-size: 11px;
+  padding-bottom: 10px;
+}
+
+.close:before, .close:after {
+  position: absolute;
+  left: 4px;
+  top: 1px;
+  content: ' ';
+  height: 8px;
+  width: 2px;
+  background-color: #333;
+}
+.close:before {
+  transform: rotate(45deg);
+}
+.close:after {
+  transform: rotate(-45deg);
+}
+
+.rule-editor-container{
+  box-sizing: border-box;
+}
+
+.validation-hint{
+  color: red;
+  background: #f0f0f0;
+  height: 35px;
+  box-sizing: border-box;
+  padding-top: 10px;
+  padding-left: 10px;
+  border-radius: 7px;
+  font-size: 12px;
+}

@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { RuleTypeEnum } from '../../types/Rule.type';
+import { RuleModel } from '../../types/Rule.model';
 
 @Component({
   selector: 'app-rule-editor',
@@ -6,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./rule-editor.component.css']
 })
 export class RuleEditorComponent implements OnInit {
+  @Input() ruleTitle = 'New Rule';
+  @Input() ruleObject: RuleModel;
+  @Output() delete: EventEmitter<any> = new EventEmitter();
+  rulesTypes = RuleTypeEnum;
+  typesKeys: any[];
+  constructor() {
+    this.typesKeys = Object.keys(this.rulesTypes).filter(String);
+  }
 
-  constructor() { }
-
+  deleteMe() {
+    this.delete.emit();
+  }
   ngOnInit() {
   }
 

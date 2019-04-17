@@ -1,26 +1,10 @@
 <div class="list-container">
   <h4 class="title">{{listName}}</h4>
   <div class="new-rule-container">
-    <button><span class="grey-text">+</span> New Rule</button>
-    <div class="new-rule-overlay" *ngIf="true">
-      <div class="title">{{ruleTitle}}</div>
-      <div class="close-button">
-        <div class="close"></div>
-      </div>
-      <div class="rule-editor-container row">
-        <div class="column col-4">
-          <select>
-            <option value="Contains">Contains</option>
-            <option value="Exact Match">Exact Match</option>
-          </select>
-        </div>
-        <div class="column col-8">
-          <input type="text" placeholder="Display Url">
-          <div class="validation-hint">
-            URL is missing
-          </div>
-        </div>
-      </div>
-    </div>
+    <app-rule-editor
+      [ruleObject]="rule"
+      *ngFor="let rule of rules" ruleTitle="{{ruleTitle}}"
+      (delete)="deleteFromList(rule)"></app-rule-editor>
+    <button (click)="addToList()"><span class="grey-text" >+</span> New Rule</button>
   </div>
 </div>

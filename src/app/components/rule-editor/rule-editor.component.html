@@ -1,3 +1,19 @@
-<p>
-  rule-editor works!
-</p>
+<div class="new-rule-overlay" *ngIf="true">
+  <div class="title">{{ruleTitle}}</div>
+  <div class="close-button" (click)="deleteMe()">
+    <div class="close"></div>
+  </div>
+  <div class="rule-editor-container row">
+    <div class="column col-4">
+      <select [(ngModel)]="ruleObject.type">
+        <option *ngFor="let key of typesKeys" [value]="key" [label]="rulesTypes[key]"></option>
+      </select>
+    </div>
+    <div class="column col-8">
+      <input type="text" placeholder="Display Url" [(ngModel)]="ruleObject.url">
+      <div class="validation-hint" *ngIf="ruleObject.url == ''">
+        URL is missing
+      </div>
+    </div>
+  </div>
+</div>
