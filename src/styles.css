@@ -1,1 +1,55 @@
-/* You can add global styles to this file, and also import other style files */
+body{
+  font-family: "Open Sans";
+}
+button:focus, input:focus, select:focus { outline: none; }
+button, select, input, option{
+  box-sizing: border-box;
+  padding: 0 10px;
+  background: white;
+  border: 2px solid #cfcfcf;
+  border-radius: 7px;
+  cursor: pointer;
+  font-size: 12px;
+  height: 35px;
+}
+button{
+  padding: 10px 15px 10px 20px;
+  font-weight: bolder;
+  text-transform: uppercase;
+  font-size: 13px;
+
+}
+button:active{
+  background: #e8e8e8;
+}
+
+.grey-text{
+  color: #bfbfbf;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 100%;
+  flex: 1;
+}
+.column>*{
+  margin-right: 10px;
+}
+.column:last-child>*{
+  margin-right: 0;
+}
+.col-4 {
+  flex-basis: calc(100% / 12 * 4);
+}
+
+.col-8 {
+  flex-basis: calc(100% / 12 * 8);
+}
